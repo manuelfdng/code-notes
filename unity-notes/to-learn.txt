@@ -1,0 +1,13 @@
+C# best practices
+Unity Scripting best practices
+DVC best practices
+Git best practices
+Multiplayer best practices
+Blender best practices and automation
+Latex
+Unity Optimization
+Blender Optimization
+Multiplayer Optimization
+
+AI integrations
+2D Game Making
