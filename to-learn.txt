@@ -1,5 +1,4 @@
 How to make CSS Frameworks
 React.js
 Node.js
-Python Classes
 Python Package Creation
