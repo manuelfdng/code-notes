@@ -1,0 +1,11 @@
+langgraph 
+langchain-core 
+langchain-community 
+ipykernel 
+langgraph-sdk 
+langgraph-checkpoint-sqlite 
+tavily-python 
+wikipedia 
+trustcall 
+langgraph-cli 
+langchain-google-vertexai
