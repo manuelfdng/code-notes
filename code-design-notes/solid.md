@@ -1,0 +1,5 @@
+- **Single Responsibility**: Functions, classes, and other groupings should have only one responsibility.  
+- **Open/Closed Principle**: Groupings should be open for extension but closed to modification.  
+- **Liskov Substitution Principle**: Ideally, lower-level classes and their higher-level classes should be interchangeable.  
+- **Interface Segregation Principle**: Classes should not contain functions that lower-level derivatives will not use. These functions should be abstracted into separate classes.  
+- **Dependency Inversion Principle**: Classes should not depend on lower-level classes. Instead, both should rely on higher-level abstractions whenever possible.
