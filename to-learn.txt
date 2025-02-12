@@ -1,4 +1,0 @@
-How to make CSS Frameworks
-React.js
-Node.js
-Python Package Creation
