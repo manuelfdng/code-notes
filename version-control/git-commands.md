@@ -6,6 +6,11 @@ git config --global user.name <username>
 git config --global user.email <email>
 ```
 
+See configuration settings
+```bash
+git config --global --list
+```
+
 Remove files from staging area
 ```bash
 git reset
@@ -103,22 +108,23 @@ Revert is a reset when other users have already pulled the commit. i.e. you don'
 git revert <hash>
 ```
 
+# Diff and Merge Tools
+
+Might be useful if VS Code doesn't work out as a Git GUI.
+
+First, download diffmerge installer (not the .exe). Check if diffmerge is installed and then follow the config params needed to use diffmerge.
+
 ```bash
+ls /usr/bin/ #check if diffmerge is installed
 ```
 
 ```bash
+git difftool
 ```
 
-```bash
-```
+# The differences among `git add -A` `git add -u` `git add .` `git add *`
 
-```bash
-```
-
-```bash
-```
-
-```bash
-```
-
-The differences among `git add -A` `git add -u` `git add .` `git add *`
+- `git add -A` This is the default. Stages all changes in the entire working tree even if you are in a subdir. If you add a dir after it only saves that dir.
+- `git add -u` Add all modified and deleted files but not any untracked files.
+- `git add .` same as `git add -A .`
+- `git add *` * is a shell command and not native to git. Does not find deleted files and hidden files. DO NOT USE.
