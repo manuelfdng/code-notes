@@ -30,15 +30,21 @@ python manage.py makemigrations
 python manage.py createsuperuser
 ```
 
-```python
+Creating a DB schema
+```bash
+python manage.py makemigrations
+python manage.py migrate
 ```
 
 ### Notable Differences from Flask
 - Use of urlpatterns to assign route names instead of decorators
 - Use of a context dictionary to input data in HTML templates instead of adding arguments to a render_template function.
 - Static directory must contain a sub-directory with the sub-app name. 
-- need to add `{% load static %}` at the top of the HTML file to access static files.
+- Need to add `{% load static %}` at the top of the HTML file to access static files.
 - Django handles password hashing out-of-the-box
+- Forms in Django need Django Crispy Forms for fine-grained control of Form CSS Classes.
+- Usage of pipe filters to format datetime objects and form objects (with Crispy).
+- Login implementation of Django redirects to Profile route by default. This behavior needs to be overwritten in settings.py.
 
 ### Other Notes
 - Previous versions of Django used regex to match paths from the main app to the sub-apps.
