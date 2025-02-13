@@ -54,6 +54,61 @@ git branch -d <branch-to-delete>
 git push origin --delete <branch-to-delete>
 ```
 
+# Fixing mistakes
+
+Before committing and pushing, reset a file
+```bash
+git checkout <filename>
+git status
+```
+
+Modifying the last commit message
+```bash
+git commit --amend -m <revised-message>
+```
+
+Adding a file to the last commit. Just skip the git commit message modification.
+```bash
+git commit --amend 
+```
+
+Made commit to the wrong branch so you need to move the commits to another branch and return the wrong branch to initial state
+```bash
+git log #get hash
+git checkout <target-branch>
+git cherry-pick <hash>
+```
+
+Removing a commit
+```bash
+git reset --soft <hash> #undo add but keep changes in files
+git reset <hash> #does not undo add
+git reset --hard <hash> #undo add and removes changes in files. DANGEROUS.
+```
+
+Deleting all untracked files and directories
+```bash
+git clean -df
+```
+
+Undoing a hard reset (only available for ~30 days depending on git garbage configuration)
+```bash
+git reflog #get hash
+git checkout <hash> #detached head state
+git branch <new-branch-name> #so save to a branch
+```
+
+Revert is a reset when other users have already pulled the commit. i.e. you don't want to overwrite history
+```bash
+git revert <hash>
+```
+
+```bash
+```
+
+```bash
+```
+
 ```bash
 ```
 
