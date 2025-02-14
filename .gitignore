@@ -1,0 +1,45 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment directories
+env/
+venv/
+**/venv/
+ENV/
+env.bak/
+venv.bak/
+
+# SQLite and other database files
+*.db
+*.sqlite3
+
+# Flask instance folder (if used)
+instance/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Log files
+*.log
+
+# VS Code settings
+.vscode/
+
+# IDE specific files
+.idea/
+*.iml
+
+# Devcontainer configuration
+.devcontainer/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Test Artifacts
+**/.pytest_cache
