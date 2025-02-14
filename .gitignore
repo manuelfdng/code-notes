@@ -12,6 +12,8 @@ ENV/
 env.bak/
 venv.bak/
 
+**/node_modules/
+
 # SQLite and other database files
 *.db
 *.sqlite3

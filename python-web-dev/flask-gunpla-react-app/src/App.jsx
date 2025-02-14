@@ -1,13 +1,15 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import App from './App';
-import { GunplaProvider } from './context/GunplaContext';
-import './index.css';
+import GunplaForm from './components/GunplaForm';
+import GunplaList from './components/GunplaList';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <GunplaProvider>
-      <App />
-    </GunplaProvider>
-  </React.StrictMode>
-);
+function App() {
+  return (
+    <div style={{ maxWidth: '800px', margin: '0 auto', padding: '1rem' }}>
+      <h1>Gunpla Models Manager</h1>
+      <GunplaForm />
+      <GunplaList />
+    </div>
+  );
+}
+
+export default App;
