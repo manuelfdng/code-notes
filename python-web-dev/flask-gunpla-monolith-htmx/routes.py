@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template, redirect, url_for, flash, request, abort
+# routes.py
+from flask import Blueprint, render_template, redirect, url_for, flash, request, abort, jsonify
 from models import Gunpla, db
 from forms import GunplaForm
 
@@ -25,9 +26,31 @@ def create():
         return redirect(url_for('main.index'))
     return render_template('create.html', form=form)
 
-from flask import request
+@main.route('/gunpla/<int:gunpla_id>/edit-form', methods=['GET'])
+def get_edit_form(gunpla_id):
+    gunpla = db.session.get(Gunpla, gunpla_id)
+    if gunpla is None:
+        abort(404)
+    form = GunplaForm(obj=gunpla)
+    return render_template('edit_form.html', form=form, gunpla=gunpla)
 
-from flask import request
+@main.route('/gunpla/<int:gunpla_id>/row', methods=['GET'])
+def get_gunpla_row(gunpla_id):
+    gunpla = db.session.get(Gunpla, gunpla_id)
+    if gunpla is None:
+        abort(404)
+    return render_template('gunpla_row.html', gunpla=gunpla)
+
+@main.route('/delete/<int:gunpla_id>', methods=['POST', 'DELETE'])
+def delete(gunpla_id):
+    gunpla = db.session.get(Gunpla, gunpla_id)
+    if gunpla is None:
+        abort(404)
+    db.session.delete(gunpla)
+    db.session.commit()
+    # Flash message will be cleared by the event listener
+    flash('Gunpla model deleted successfully!', 'success')
+    return ""
 
 @main.route('/edit/<int:gunpla_id>', methods=['GET', 'POST'])
 def edit(gunpla_id):
@@ -41,25 +64,9 @@ def edit(gunpla_id):
         gunpla.grade = form.grade.data
         gunpla.scale = form.scale.data
         db.session.commit()
+        # Flash message will be cleared by the event listener
         flash('Gunpla model updated successfully!', 'success')
-        # If the request came via HTMX, return just the updated list item HTML fragment.
-        if request.headers.get("HX-Request"):
-            return render_template('gunpla_item.html', gunpla=gunpla)
-        return redirect(url_for('main.index'))
-    # If HTMX, return a partial template (without the full layout)
-    if request.headers.get("HX-Request"):
-         return render_template('edit_form.html', form=form, gunpla=gunpla)
-    return render_template('edit.html', form=form, gunpla=gunpla)
-
-@main.route('/delete/<int:gunpla_id>', methods=['POST', 'DELETE'])
-def delete(gunpla_id):
-    gunpla = db.session.get(Gunpla, gunpla_id)
-    if gunpla is None:
-        abort(404)
-    db.session.delete(gunpla)
-    db.session.commit()
-    flash('Gunpla model deleted successfully!', 'success')
-    if request.headers.get("HX-Request"):
-         # Return an empty response with HTTP status 204 (No Content) so HTMX can remove the element.
-         return ('', 204)
-    return redirect(url_for('main.index'))
+        return render_template('gunpla_row.html', gunpla=gunpla)
+    if form.errors:
+        return render_template('edit_form.html', form=form, gunpla=gunpla), 422
+    return render_template('edit_form.html', form=form, gunpla=gunpla)
