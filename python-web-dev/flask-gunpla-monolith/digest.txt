@@ -428,12 +428,4 @@ File: templates/index.html
   {% endif %}
 {% endblock %}
 
-Modify the menu such that edit and delete use HTMX instead of SSR.
-HTMX should be implemented with Flask-WTF like this:
-
-    <form method="POST">
-        {{ form.csrf_token }}
-        {{ form.country(**{"hx-get": "/get_cities", "hx-target": "#city"}) }}
-        {{ form.city }}
-        <button>Submit</button>
-    </form>
+Please generate a README.md for this project.
