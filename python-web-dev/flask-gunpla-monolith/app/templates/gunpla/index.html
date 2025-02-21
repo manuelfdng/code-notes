@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% block title %}Gunpla List{% endblock %}
+{% block content %}
+    <h1>Gunpla Models</h1>
+    {% if gunplas %}
+        <ul>
+            {% for gunpla in gunplas %}
+                <li>
+                    <strong>{{ gunpla.name }}</strong> - {{ gunpla.series }} - {{ gunpla.grade }} - {{ gunpla.scale }}
+                    <a href="{{ url_for('main.edit', gunpla_id=gunpla.id) }}">Edit</a>
+                    <form action="{{ url_for('main.delete', gunpla_id=gunpla.id) }}" method="post" style="display:inline;">
+                        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}"/>
+                        <input type="submit" value="Delete" onclick="return confirm('Are you sure you want to delete this model?');">
+                    </form>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No gunpla models found.</p>
+    {% endif %}
+{% endblock %}

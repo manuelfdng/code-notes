@@ -12,6 +12,7 @@ gitingest . \
   -e "**/build/**" \
   -e "**/.DS_Store" \
   -e "**/*.log" \
+  -e "**/package-lock.json" \
   -i "**/*.py" \
   -i "**/*.js" \
   -i "**/*.jsx" \
