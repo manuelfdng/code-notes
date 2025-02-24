@@ -52,8 +52,9 @@ function GunplaForm() {
             {error && <ErrorMessage message={error} />}
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label>Name:</label><br />
+                    <label htmlFor="name">Name:</label><br />
                     <input
+                        id="name"
                         type="text"
                         name="name"
                         value={formData.name}
@@ -62,8 +63,9 @@ function GunplaForm() {
                     />
                 </div>
                 <div>
-                    <label>Series:</label><br />
+                    <label htmlFor="series">Series:</label><br />
                     <input
+                        id="series"
                         type="text"
                         name="series"
                         value={formData.series}
@@ -72,8 +74,9 @@ function GunplaForm() {
                     />
                 </div>
                 <div>
-                    <label>Grade:</label><br />
+                    <label htmlFor="grade">Grade:</label><br />
                     <input
+                        id="grade"
                         type="text"
                         name="grade"
                         value={formData.grade}
@@ -82,8 +85,9 @@ function GunplaForm() {
                     />
                 </div>
                 <div>
-                    <label>Scale:</label><br />
+                    <label htmlFor="scale">Scale:</label><br />
                     <input
+                        id="scale"
                         type="text"
                         name="scale"
                         value={formData.scale}

@@ -1,6 +1,6 @@
 import React from 'react';
-import GunplaForm from './components/GunplaForm';
-import GunplaList from './components/GunplaList';
+import GunplaForm from './components/gunpla/GunplaForm';
+import GunplaList from './components/gunpla/GunplaList';
 
 function App() {
   return (

@@ -10,7 +10,7 @@ export const GunplaContext = createContext();
 
 export const GunplaProvider = ({ children }) => {
     const [gunplas, setGunplas] = useState([]);
-    const [loading, setLoading] = useState(false);
+    const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [selectedGunpla, setSelectedGunpla] = useState(null);
 

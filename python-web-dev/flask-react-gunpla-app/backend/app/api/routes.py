@@ -9,16 +9,22 @@ class GunplaListResource(Resource):
         return [gunpla.to_dict() for gunpla in gunplas], 200
 
     def post(self):
-        args = gunpla_parser.parse_args()
-        new_gunpla = Gunpla(
-            name=args['name'],
-            series=args['series'],
-            grade=args['grade'],
-            scale=args.get('scale')
-        )
-        db.session.add(new_gunpla)
-        db.session.commit()
-        return new_gunpla.to_dict(), 201
+        try:
+            args = gunpla_parser.parse_args()
+            new_gunpla = Gunpla(
+                name=args['name'],
+                series=args['series'],
+                grade=args['grade'],
+                scale=args.get('scale')
+            )
+            db.session.add(new_gunpla)
+            db.session.commit()
+            return new_gunpla.to_dict(), 201
+        except Exception as e:
+            # Return validation errors as is since they're already formatted correctly
+            if hasattr(e, 'data') and isinstance(e.data, dict):
+                return e.data, 400
+            return {"message": str(e)}, 400
 
 class GunplaResource(Resource):
     def get(self, gunpla_id):
@@ -31,6 +37,7 @@ class GunplaResource(Resource):
         gunpla = db.session.get(Gunpla, gunpla_id)
         if gunpla is None:
             return {'message': 'Gunpla model not found'}, 404
+        
         args = gunpla_parser.parse_args()
         gunpla.name = args['name']
         gunpla.series = args['series']
