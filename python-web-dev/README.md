@@ -11,13 +11,17 @@ This repository contains notes and sample applications illustrating **three prim
 - [Why Different Rendering Approaches?](#why-different-rendering-approaches)
 - [Project Structure](#project-structure)
 - [How to Run Each Project](#how-to-run-each-project)
+- [Additional Notes](#additional-notes)
+  - [Django Commands](#django-commands)
+  - [Python Features](#python-features)
+
 ---
 
 ## Overview of Rendering Patterns
 
 ### 1. Traditional Server-Side Rendering (Flask)
 
-**Project:** [flask-gunpla-monolith/](../flask-gunpla-monolith/)
+**Project:** [flask-gunpla-monolith/](../../flask-gunpla-monolith/)
 
 In **server-side rendering** (SSR), each request to the server results in a new HTML page being generated on the backend. The Flask application:
 
@@ -40,7 +44,7 @@ In **server-side rendering** (SSR), each request to the server results in a new 
 
 ### 2. Server-Side Rendering with HTMX (Flask + HTMX)
 
-**Project:** [flask-gunpla-monolith-htmx/](../flask-gunpla-monolith-htmx/)
+**Project:** [flask-gunpla-monolith-htmx/](../../flask-gunpla-monolith-htmx/)
 
 This approach still uses **server-side rendering** but enhances it with **[HTMX](https://htmx.org/)** to perform **partial page updates**. Instead of doing a full page reload for every user action:
 
@@ -63,7 +67,7 @@ This approach still uses **server-side rendering** but enhances it with **[HTMX]
 
 ### 3. Single-Page Application (Flask + React)
 
-**Project:** [flask-react-gunpla-app/](../flask-react-gunpla-app/)
+**Project:** [flask-react-gunpla-app/](../../flask-react-gunpla-app/)
 
 In this pattern, **React** handles all the client-side rendering, and Flask provides a **RESTful API**:
 
@@ -97,96 +101,31 @@ Each approach serves different needs:
 
 ## Project Structure
 
-This repository has a top-level folder, **`python-web-dev/`**, containing three main subdirectories, each illustrating a different rendering pattern:
-
 ```
-python-web-dev/
+code-notes/python-web-dev/
 ├── flask-gunpla-monolith/        # (1) Flask SSR
 ├── flask-gunpla-monolith-htmx/   # (2) Flask SSR with HTMX
 ├── flask-react-gunpla-app/       # (3) Flask + React SPA
 └── notes/
     ├── django-commands.md
     ├── python-features.md
-    └── rendering-patterns.md  
+    └── rendering-patterns.md  <-- This README or further rendering notes can live here
 ```
 
 Each sub-project has its own `README.md`, its own `run.py` or equivalent entry point, and its own set of dependencies.
 
 ---
 
-## How to Run Each Project
+## Additional Notes
 
-### 1. Flask Gunpla Monolith (Server-Side Rendering)
+### Django Commands
 
-1. **Install Requirements**  
-   ```bash
-   cd flask-gunpla-monolith
-   python -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-   pip install -r requirements.txt
-   ```
-2. **Set Up Database** (optional, if you’d like to run migrations)  
-   ```bash
-   flask db upgrade
-   ```
-3. **Run App**  
-   ```bash
-   python run.py
-   ```
-4. Open your browser at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
+For those interested in Django usage (another popular Python web framework), see [django-commands.md](../notes/django-commands.md). 
+
+### Python Features
+
+See [python-features.md](../notes/python-features.md) for notes on various Python language features, tips, and best practices.
 
 ---
 
-### 2. Flask Gunpla Monolith HTMX (SSR + HTMX)
-
-1. **Install Requirements**  
-   ```bash
-   cd flask-gunpla-monolith-htmx
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-2. **Run App**  
-   ```bash
-   python run.py
-   ```
-3. Open your browser at [http://127.0.0.1:5000/](http://127.0.0.1:5000/)
-
-You will see dynamic interactions (inline edits, partial refreshes, etc.) powered by HTMX.
-
----
-
-### 3. Flask-React Gunpla App (SPA)
-
-**Backend Setup:**
-
-1. **Install Requirements**  
-   ```bash
-   cd flask-react-gunpla-app/backend
-   python -m venv venv
-   source venv/bin/activate
-   pip install -r requirements.txt
-   ```
-2. **Run Flask Server**  
-   ```bash
-   python run.py
-   ```
-3. The Flask server will run at [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
-
-**Frontend Setup:**
-
-1. **Install NPM Dependencies**  
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-2. **Run React Dev Server**  
-   ```bash
-   npm run dev
-   ```
-3. The React client runs at [http://127.0.0.1:5173/](http://127.0.0.1:5173/) (or a similar port). It proxies API requests to the Flask backend.
-
----
-
-**Happy Building!**  
-Use these projects and notes as a guide to explore the trade-offs of different rendering patterns, from traditional SSR to modern single-page apps. Experiment and choose the approach that best suits your project’s size, complexity, and user experience requirements.
+**Happy Building!**
