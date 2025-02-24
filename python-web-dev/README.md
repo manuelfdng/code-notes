@@ -21,7 +21,7 @@ This repository contains notes and sample applications illustrating **three prim
 
 ### 1. Traditional Server-Side Rendering (Flask)
 
-**Project:** [flask-gunpla-monolith/](../../flask-gunpla-monolith/)
+**Project:** [flask-gunpla-monolith/](./flask-gunpla-monolith/)
 
 In **server-side rendering** (SSR), each request to the server results in a new HTML page being generated on the backend. The Flask application:
 
@@ -44,7 +44,7 @@ In **server-side rendering** (SSR), each request to the server results in a new 
 
 ### 2. Server-Side Rendering with HTMX (Flask + HTMX)
 
-**Project:** [flask-gunpla-monolith-htmx/](../../flask-gunpla-monolith-htmx/)
+**Project:** [flask-gunpla-monolith-htmx/](./flask-gunpla-monolith-htmx/)
 
 This approach still uses **server-side rendering** but enhances it with **[HTMX](https://htmx.org/)** to perform **partial page updates**. Instead of doing a full page reload for every user action:
 
@@ -67,7 +67,7 @@ This approach still uses **server-side rendering** but enhances it with **[HTMX]
 
 ### 3. Single-Page Application (Flask + React)
 
-**Project:** [flask-react-gunpla-app/](../../flask-react-gunpla-app/)
+**Project:** [flask-react-gunpla-app/](./flask-react-gunpla-app/)
 
 In this pattern, **React** handles all the client-side rendering, and Flask provides a **RESTful API**:
 
@@ -120,11 +120,11 @@ Each sub-project has its own `README.md`, its own `run.py` or equivalent entry p
 
 ### Django Commands
 
-For those interested in Django usage (another popular Python web framework), see [django-commands.md](../notes/django-commands.md). 
+For those interested in Django usage (another popular Python web framework), see [django-commands.md](./notes/django-commands.md). 
 
 ### Python Features
 
-See [python-features.md](../notes/python-features.md) for notes on various Python language features, tips, and best practices.
+See [python-features.md](./notes/python-features.md) for notes on various Python language features, tips, and best practices.
 
 ---
 
