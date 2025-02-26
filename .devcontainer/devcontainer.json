@@ -19,5 +19,9 @@
         }
     },
     "forwardPorts": [5000],
-    "remoteUser": "vscode"
+    "remoteUser": "vscode",
+    "mounts": [
+        "source=${localWorkspaceFolder}/scripts,target=/workspace/scripts,type=bind,consistency=cached"
+    ],
+    "postCreateCommand": "pip install --upgrade gitingest && mkdir -p /workspace/scripts && cp /usr/local/bin/ingest /workspace/scripts/ingest.sh && chmod +x /workspace/scripts/ingest.sh"
 }

@@ -14,8 +14,18 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 # Set the working directory inside the container.
 WORKDIR /workspace
 
+# Create bin directory for scripts
+RUN mkdir -p /usr/local/bin
+
+# Create the ingest.sh script and make it executable
+COPY scripts/ingest.sh /usr/local/bin/ingest
+RUN chmod +x /usr/local/bin/ingest
+
 # (Optional) Copy the rest of your project if not using a bind mount.
 # COPY . .
+
+# Install gitingest package
+RUN pip install gitingest
 
 # Verify npm installation
 RUN node -v && npm -v
