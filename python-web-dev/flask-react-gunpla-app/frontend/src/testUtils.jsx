@@ -1,4 +1,3 @@
-// frontend/src/test-utils.jsx
 import React from 'react';
 import { render } from '@testing-library/react';
 import { GunplaProvider } from './context/GunplaContext';

@@ -1,6 +1,6 @@
 // src/components/gunpla/__tests__/GunplaItem.test.jsx
 import React from 'react';
-import { render, screen } from '../../../test-utils';
+import { render, screen } from '../../../testUtils';
 import userEvent from '@testing-library/user-event';
 import GunplaItem from '../GunplaItem';
 import { GunplaContext } from '../../../context/GunplaContext';

@@ -1,6 +1,6 @@
 // src/components/gunpla/__tests__/GunplaList.test.jsx
 import React from 'react';
-import { render, screen } from '../../../test-utils';
+import { render, screen } from '../../../testUtils';
 import GunplaList from '../GunplaList';
 import { GunplaContext } from '../../../context/GunplaContext';
 import { describe, it, expect, vi } from 'vitest';
