@@ -65,5 +65,12 @@ When working with Flask, follow these foundational best practices to ensure scal
 - **Separate CSS and JS** into static files right away. Avoid inline styles or scripts to maintain cleaner templates and enable better caching and reuse.
 - **Adopt Flask-SQLAlchemy and Flask-Migrate** from the start for database modeling and migrations. This ensures consistent schema management and easier collaboration.
 - **Keep the project modular** using Flask blueprints. Group blueprints into separate folders by domain to improve code organization and scalability.
+- **Use centralized error handling** via a structured system of:
+  - Predefined **custom exception classes** (e.g., `AppError`, `NotFoundError`, `ValidationError`, etc.) located in a shared `exceptions.py` module.
+  - Global **Flask error handlers** registered using `@app.errorhandler()` decorators, which return standardized JSON responses with appropriate HTTP status codes.
+  - All unhandled exceptions must return a 500 Internal Server Error with a generic message, while being fully logged (stack trace included) using the **Python `logging` module**, configured app-wide in `logging_config.py`.
+  - No inline `try/except` unless absolutely necessary for localized flow control — error handling must propagate to the centralized system.
+  - Every error response must follow a consistent schema: `{ "error": "Message", "code": 400 }`.
 
 These practices should be assumed as defaults when building or reviewing any Flask-based application.
+
