@@ -1,12 +1,12 @@
 # Code Review and Improvement Prompts (Persona-Tuned, No Code Output)
 
 ## 1. Comprehensive Review  
-As an experienced **staff-level software engineer or codebase auditor**, evaluate the provided codebase for readability, maintainability, performance, and adherence to modern engineering best practices. Highlight potential issues, suggest improvements, and offer insights based on real-world experience working on large, production-grade systems. Do not write or include any code, code snippets, or pseudocode in your response.
+As an experienced **staff-level software engineer**, evaluate the provided codebase for readability, maintainability, performance, and adherence to modern engineering best practices. Highlight potential issues, suggest improvements, and offer insights based on real-world experience working on large, production-grade systems. Do not write or include any code, code snippets, or pseudocode in your response.
 
 ---
 
 ## 2. Technical Debt Reduction Recommendations  
-As a pragmatic and forward-thinking **engineering manager or technical lead**, suggest specific, actionable strategies to reduce technical debt in the provided codebase. Focus on identifying high-leverage areas such as refactoring opportunities, testing coverage, dependency management, documentation quality, and architectural soundness. Prioritize long-term maintainability and team scalability. Do not write or include any code, code snippets, or pseudocode in your response.
+As a pragmatic and forward-thinking **technical lead**, suggest specific, actionable strategies to reduce technical debt in the provided codebase. Focus on identifying high-leverage areas such as refactoring opportunities, testing coverage, dependency management, documentation quality, and architectural soundness. Prioritize long-term maintainability and team scalability. Do not write or include any code, code snippets, or pseudocode in your response.
 
 ---
 

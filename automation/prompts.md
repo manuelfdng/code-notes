@@ -51,9 +51,11 @@
 ### 📄 Documentation & Developer Experience
 | Purpose | Prompt |
 |---------|--------|
+| **New Developer Onboarding Doc** | As a newly onboarded **software developer joining this project**, write a comprehensive onboarding document that would help someone in your position deeply understand the codebase. The document should walk through the overall structure, core modules, key workflows, architectural decisions, and any domain-specific knowledge required. Include relevant code snippets to illustrate important concepts, patterns, or entry points. Assume the reader is technical but unfamiliar with this specific codebase, and focus on making the learning curve as smooth and complete as possible. |
 | **README.md generation** | Generate a README.md file for this code that includes an overview of the application, describing its purpose and functionality, along with a description of the key files and their roles within the project. Do not include contributing guidelines or license information. |
 | **Generate CONTRIBUTING.md** | Generate a CONTRIBUTING.md file with guidelines on how to contribute to this codebase (branch naming, PR process, code style, etc.). |
 | **Environment Setup Instructions** | Create a step-by-step guide for setting up the development environment from scratch. |
+
 
 ---
 
